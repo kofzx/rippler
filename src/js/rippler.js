@@ -7,7 +7,7 @@
         effectClass      :  'rippler-effect'
         ,effectSize      :  0      // Default size (width & height)
         ,addElement      :  'div'   // e.g. 'svg' (feature)
-        ,duration        :  600
+        ,duration        :  300
       }, options);
       return this.each(function(){
         var _this = this;
@@ -34,11 +34,12 @@
             $this.on("mousedown."+ namespace, function(event) {
               var $self = $(this);
               methods.elementAdd.call(_this, $self, event);
+			  methods.effect.call(_this, $self, event);
             });
-            $this.on("mouseup."+ namespace, function(event) {
-              var $self = $(this);
-              methods.effect.call(_this, $self, event);
-            });
+            //$this.on("mouseup."+ namespace, function(event) {
+            //  var $self = $(this);
+            //  methods.effect.call(_this, $self, event);
+            //});
 
           }
 
